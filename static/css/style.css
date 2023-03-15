@@ -1,0 +1,104 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: Helvetica;
+  box-sizing: border-box;
+}
+
+/* Cabeçalho */
+header {
+  background-color: #961804;
+  text-align: center;
+  padding: 15px;
+  color: #fff;
+}
+
+/* Grid de produtos */
+.container {
+  background-color: #eee;
+  min-height: 60vh;
+  padding: 50px;
+}
+
+.products-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.card {
+  width: 31%;
+  margin: 1% 1%;
+  display: inline-block;
+  padding: 15px;
+}
+
+.product-image {
+  height: 300px;
+  width: 100%;
+  margin-bottom: 10px;
+  background-position: center;
+  background-size: cover;
+}
+
+#img-1 {
+  background-image: url('/static/img/airforce01.jpeg');
+}
+
+#img-2 {
+  background-image: url('/static/img/airforce02.jpg');
+}
+
+#img-3 {
+  background-image: url('/static/img/airforce03.jpg');
+}
+
+#img-4 {
+  background-image: url('/static/img/airforce04.jpeg');
+}
+
+#img-5 {
+  background-image: url('/static/img/airforce05.jpg');
+}
+
+#img-6 {
+  background-image: url('/static/img/airforce06.jpg');
+}
+
+h3 {
+  margin-bottom: 10px;
+  color: #6c1103;
+  font-size: 24px;
+}
+
+.card p {
+  margin-bottom: 10px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  text-decoration: none;
+  background-color: #9c1804;
+  color: #fff;
+  padding: 15px;
+  border-radius: 5px;
+}
+
+.btn:hover {
+  background-color: #6c1103;
+  transition: 0.5s;
+}
+
+/* Rodapé */
+footer {
+  background-color: #961804;
+  text-align: center;
+  padding: 80px;
+  color: #fff;
+}
