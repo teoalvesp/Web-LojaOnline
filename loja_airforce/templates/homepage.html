@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/style.css')}}">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+    
+    {% block import %}
+    <link rel="stylesheet" href="{{url_for('static', filename='css/grid.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/pagination.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css')}}">
+    <link rel="stylesheet" href="{{url_for('static', filename='css/grid.css')}}">
+    {% endblock %}
+
+   
+
+    
+    <title>{% block title %}
+        Airforce Shop
+        {% endblock %} </title>
+</head>
+
+{% block body %}
+<body>
+  {% include "navbar.html" %}
+
+  <div class="alert alert-success" role="alert">
+    <h4 class="alert-heading">Bem vindo(a)</h4>
+    <p>Olá, meu nome é Matheus Alves e eu criei este site utilizando Flask(python) no backend, e HTML, JavaScript no frontend, além de estilizá-lo com CSS personalizado e Bootstrap. Esse site funciona como uma loja de produtos e possui todas as funcionalidades necessárias para oferecer uma boa experiência aos usuários, como autenticação, opção de adicionar produtos ao carrinho, diversos meios de pagamento, descrição detalhada dos produtos, entre outros recursos importantes. Além disso, ele conta com uma área de administração para os proprietários da loja, onde eles podem adicionar, remover e personalizar produtos conforme necessário.</p>
+    <hr>
+    <p class="mb-0">ATENÇÃO! Todos os produtos da loja são para fins demonstrativos.</p>
+  </div>
+
+    <!-- Grid de Produtos -->
+    <main class="container-main">
+      <section class="products-grid">
+        
+        {% if busca %}
+        <h2>'{{ produtos|length}} resultados encontrados'</h2>
+        {% endif %}
+
+        {% for produto in produtos %}
+
+
+           <a href="{{ url_for('produto', id=produto.id) }}">
+          <div class="card">
+          
+            {% if produto.imagens %}
+            <div class="product-image" style="background-image: url('{{ produto.imagens[0].imagem }}')"></div>
+            {% endif %}
+
+            <hr>
+            <h3>{{ produto.nome_produto }}</h3>
+            <p>
+              <span class="bold">{{ format_currency(produto.valor) }}</span>
+              <p style="font-size: 15px;">em 12x R$ {{ '%.2f'|format(produto.valor / 12) }} sem juros</p>
+            </p> 
+            {% if current_user.fullname == "admin" %}
+            <a href="#" class="btn btn-primary btn-lg btn-block">Editar Produto</a> 
+            {% endif %}
+          </div>
+          </a>
+          {% endfor %}
+        </section>
+      </main>
+      <div class="pagination-container">
+        {{ pagination.links }}
+      </div>
+      
+     
+    <!-- Rodapé -->
+    <hr color=#fff>
+    <footer>
+      <p>
+        <span class="bold">Airforce Shop</span>
+        &copy; 2023
+        <p>Desenvolvido por Matheus Alves</p>
+      </p>
+    </footer>
+  
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="../static/js/carrinho.js"></script>
+
+</body>
+{% endblock %}
+</html>
+    

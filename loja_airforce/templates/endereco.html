@@ -1,0 +1,60 @@
+{% extends "homepage.html" %}
+
+{% block title%}
+ Produto - Airforce Shop
+{% endblock %}
+
+{% block import %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/endereco.css')}}">
+{% endblock %}
+
+{% block body%}
+<body>
+    {% include "navbar.html" %}
+    <section class="container-main">
+        <div class="container">
+      
+            <div id="endereco" class="form-endereco col-md-8 order-md-1">
+             <h4 class="mb-3">Adicionar Endereço</h4>
+             <form class="needs-validation" novalidate="" method="POST">
+                 {{ form.csrf_token }}
+             <div class="mb-3">
+                 {{ form.endereco1.label(class="form-label") }}
+                 {{ form.endereco1(class="form-control form-control-lg") }}
+                 <div class="invalid-feedback"> Por favor selecione sua  Rua. </div>
+                 </div>
+             <div class="mb-3">
+                 {{ form.endereco2.label(class="form-label") }}
+                 {{ form.endereco2(class="form-control form-control-lg") }}
+                 <div class="invalid-feedback"> Por favor selecione seu Bairro. </div>
+                 </div>
+             <div class="row">
+             <div class="col-md-5 mb-3">
+                 {{ form.pais.label(class="form-label") }}
+                 {{ form.pais(class="form-control form-control-lg") }}
+                 <div class="invalid-feedback"> Por favor selecione seu País. </div>
+                 </div>
+             <div class="col-md-4 mb-3">
+                 {{ form.estado.label(class="form-label") }}
+                 {{ form.estado(class="form-control form-control-lg") }}
+                 <div class="invalid-feedback"> Por favor selecione seu Estado. </div>
+                 </div>
+             <div class="form-cep col-md-3 mb-3">
+             {{ form.cep.label(class="form-label") }}
+             {{ form.cep(class="cep form-control form-control-lg") }}
+             <div class="invalid-feedback"> CEP Inválido. </div>
+             </div>
+             </div>
+             <hr class="mb-4">
+     
+             {{ form.btn_submit(class="btn btn-primary btn-lg btn-block") }}
+             </form>
+         </div>
+       
+     </div> 
+    </section>
+  
+    
+</body>
+{% endblock %}

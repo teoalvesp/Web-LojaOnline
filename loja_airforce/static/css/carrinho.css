@@ -1,0 +1,35 @@
+#btn-carrinho .btn{
+    background-color: transparent !important;
+    border: 1px solid rgba(0, 0, 0, 0.357);
+}
+
+.qtd-produto {
+    color: #000;
+    outline: 1px solid #01000057;
+    margin: 0.2em 0.3em 0 0.3em;
+    height: 1.5em;
+    padding: 0.2em;
+    border-radius: 3px;
+}
+
+.btn-remover {
+    font-size: 1em;
+    height: 2em;
+    margin-top: 0.1em;
+    padding: 0.5em 0;
+}
+
+@media only screen and (max-width: 768px) {
+    .btn-custom{
+        margin-top: 0.4em;
+        margin-bottom: 0.4em !important;
+    }
+
+    .qtd-produto {
+        margin-top: 0.5em;
+    }
+
+    .mb-0 .btn-custom2 {
+        width: 80% !important;
+    }
+}

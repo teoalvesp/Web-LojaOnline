@@ -1,0 +1,100 @@
+{% extends "homepage.html" %}
+
+{% block title%}
+Login - Airforce Shop
+{% endblock %}
+
+{% block import %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/forms.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css')}}">
+{% endblock %}
+
+{% block body%}
+<body>
+  {% include "navbar.html" %}
+    <section class="container-main">
+      <main class="vh-100" id="form-container">
+        <div class="container py-5 h-100">
+          <div class="card-login row d-flex align-items-center justify-content-center h-100">
+            <div class="img-login col-md-8 col-lg-7 col-xl-6">
+              <img src="../static/img-site/img-banner-login.png"
+                class="img-fluid" alt="Phone image">
+            </div>
+            <div class="form col-md-7 col-lg-5 col-xl-5 offset-xl-1" style="padding-right: 50px;">
+              {% if usuario == "usuario" %}
+              <form method="POST">
+                <!-- Email input -->
+                {{ form.csrf_token }}
+                <div class="form-outline mb-4">
+                  {{ form.email.label(class="form-label") }}
+                  {{ form.email(class="form-control form-control-lg") }}
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  {{ form.senha.label(class="form-label") }}
+                  {{ form.senha(class="form-control form-control-lg") }}
+                </div>
+    
+                <div class="d-flex justify-content-around align-items-center mb-4">
+                  <!-- Checkbox -->
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="" id="form1Example3" checked />
+                    <label class="form-check-label" for="form1Example3"> Mantenha-me conectado </label>
+                  </div>
+                  <a href="#!">Esqueceu a senha?</a>
+                </div>
+      
+                <!-- Submit button -->
+                {{ form.btn_submit(class="btn btn-primary btn-lg btn-block") }}
+      
+                <div class="divider d-flex align-items-center my-4">
+                  <p class="text-center fw-bold mx-3 mb-0 text-muted">OU</p>
+                </div>
+                
+                <p style="margin-bottom: 5px;">formas de login indisponível por enquanto</p>
+                <a class=" btn-primary btn-lg btn-block" style="background-color: #3b5898ea" href="#!"
+                  role="button">
+                  <i class="fab fa-facebook-f me-2"></i>Continue com Facebook
+                </a>
+                <a class="btn-primary btn-lg btn-block" style="background-color: #f54646dd" href="#!"
+                  role="button">
+                  <i class="fab fa-google me-2"></i>Continue com Google</a>
+    
+                  <p style="
+                  margin-bottom: 0px;
+                  padding-top: 25px;">Não possue uma conta?
+                    <a href="{{ url_for('criarconta') }}">Clique aqui</a>
+                  </p>
+              </form>
+              {% endif %}
+              {% if usuario == "administrador" %}
+              <h1>Bem vindo(a) Adminstrador</h1>
+              <form method="POST">
+                <!-- Email input -->
+                {{ form.csrf_token }}
+                <div class="form-outline mb-4">
+                  {{ form.username.label(class="form-label") }}
+                  {{ form.username(class="form-control form-control-lg") }}
+                </div>
+                <!-- Password input -->
+                <div class="form-outline mb-4">
+                  {{ form.senha.label(class="form-label") }}
+                  {{ form.senha(class="form-control form-control-lg") }}
+                </div>
+      
+                <!-- Submit button -->
+                {{ form.btn_submit(class="btn-adm btn btn-primary btn-lg btn-block") }}
+      
+              {% endif %}
+            </div>
+          </div>
+        </div>
+      </main>
+    </section>
+    
+    
+  
+  
+
+</body>
+{% endblock %}

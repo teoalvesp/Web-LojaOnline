@@ -1,0 +1,61 @@
+.card-login {
+    background-color: #ffffff80;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.2);
+    border-radius: 5px;
+}
+
+body {
+    background-color: #f1efef;
+}
+
+.card-criarconta .icons-midia a{
+    padding: 20px;
+}
+
+.btn{
+    margin-bottom: 15px;
+}
+
+.container-main #form-container .card-login{
+    width: 80%;
+    margin-left: 10%;
+    height: 40em !important;
+}
+
+.container {
+    padding: 2.5em 0 !important;
+}
+
+#form-container {
+    height: 40em !important;
+}
+
+.btn-lg:hover {
+    text-decoration: none;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.285) !important;
+}
+
+@media screen and (max-width: 993px) {
+    .container-main #form-container .card-login {
+        height: 900px !important;
+    }
+}
+
+@media screen and (min-width: 1300px) {
+    
+    .container-main #form-container .card-login {
+        height: 800px !important;
+        margin-top: 4rem !important;
+        width: 1100px;
+        margin: auto;
+    }
+
+    .container-main .card-login .form-criarconta {
+        font-size: 1.8rem;
+    }
+    .container-main .card-login .form-check-label {
+        font-size: 1.4rem;
+    }
+}
+  
+  

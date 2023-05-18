@@ -1,0 +1,90 @@
+{% extends "homepage.html" %}
+
+{% block title%}
+ Produto - Airforce Shop
+{% endblock %}
+
+{% block import %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/produto.css')}}">
+<link rel = ”stylesheet” href = ”https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css”>
+{% endblock %}
+
+{% block body%}
+<body>
+  {% include "navbar.html" %}
+  <main class="container-product">
+
+    <div id="carouselExampleControls" class="carousel slide" data-ride="carousel">
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img class="d-block w-100" src="../{{ produto.imagens[0].imagem }}" alt="First slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="../static/img/img-1-Tênis-Nike.png" alt="Second slide">
+        </div>
+        <div class="carousel-item">
+          <img class="d-block w-100" src="../static/img/img-2-Air-Force-.png" alt="Third slide">
+        </div>
+      </div>
+      <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="sr-only">Previous</span>
+      </a>
+      <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="sr-only">Next</span>
+      </a>
+    </div>
+
+    <div class="info-product card" style="display: flex;">
+      <h3>{{ produto.nome_produto }}</h3>
+      <p>
+        <span class="bold" style="height: 10px;">{{ format_currency(produto.valor) }}</span>
+        <p id="p-pay" style="font-size: 15px;">em 12x R$ {{ '%.2f'|format(produto.valor / 12) }} sem juros</p>
+      <a class="pay-forms" href="#">ver os meios de pagamento</a>
+      <img class="img-pay" src="../static/img-site/mercadopago-logo.png" style="width: 150px;" alt="mercadopago-logo">
+        {% if current_user.fullname != "admin" %}
+        <a href="{{ url_for('carrinho') }}" class="btn-compra btn btn-primary btn-lg btn-block">Comprar agora</a>
+
+      <form method="POST">
+        {{ form_carrinho.submit(class_="adicionar-ao-carrinho btn-adm btn btn-primary btn-lg btn-block") }}
+      </form>
+
+        {% else %}
+        <a href="#" class="btn-compra btn btn-primary btn-lg btn-block">Editar informações</a>
+        {% endif %}
+      <div class="frete-container">
+        <img class="icon-frete" src="../static/img-site/icone-frete.png" alt="icone-frete">
+        <p class="text-frete">Frete grátis para todo Brasil</p>
+      </div>            
+    </div>           
+  </main>
+
+    <div class="descricao-product">
+      <hr width="95%" style="margin: 20px;">
+      <h1>Descrição do produto</h1>
+      <p>
+        Os produtos da nossa loja são itens de alta qualidade projetado para atender às suas necessidades. Ele apresenta um design moderno e elegante que se adapta perfeitamente a qualquer estilo de vida. Com materiais de alta qualidade e uma construção durável, este produto é garantido para durar por muitos anos e fornecer a funcionalidade que você precisa. Se você está procurando um produto confiável e de alta qualidade para atender às suas necessidades, este produto é uma excelente escolha.</p>
+
+      <h1>Mais informações sobre o produto</h1>
+      <p>
+        Os produtos da nossa loja são itens de alta qualidade projetado para atender às suas necessidades. Ele apresenta um design moderno e elegante que se adapta perfeitamente a qualquer estilo de vida. Com materiais de alta qualidade e uma construção durável, este produto é garantido para durar por muitos anos e fornecer a funcionalidade que você precisa. Se você está procurando um produto confiável e de alta qualidade para atender às suas necessidades, este produto é uma excelente escolha.</p>
+
+    </div>
+  
+
+    <footer>
+      <p>
+        <span class="bold" style="font-size: 25px;">Airforce Shop</span>
+        &copy; 2023
+        <p style="font-size: 15px;">Desenvolvido por Matheus Alves</p>
+      </p>
+    </footer>
+
+
+  
+  
+</body>
+{% endblock %}
+

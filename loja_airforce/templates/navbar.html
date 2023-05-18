@@ -1,0 +1,68 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light" id="navbar-custom">
+    <a class="navbar-brand" href="{{ url_for('homepage') }}">
+        <img src="../static/img-site/logo-airforce.png" alt="logo-airforce">
+    </a>
+    
+    {% if views == "homepage" or views == "produtos" or views == "produto" %}
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <form class="form-inline my-2 my-lg-0" method="POST">
+        {{ form.csrf_token }}
+        
+        {{ form.busca(class="form-control mr-sm-2", placeholder="Search", aria_label="Search") }}
+
+        {{ form.btn_submit(class="btn btn-outline-success my-2 my-sm-0", type="submit") }}
+      </form>  
+    </div>
+    {% endif %}
+
+    <div class="restante-nav">   
+  
+        <!-- Verificar se Usuario esta logado-->
+        {% if current_user.is_authenticated %}
+
+        <!-- Nav do Administrador-->
+        {% if views == "homepage" and current_user.fullname == "admin" %}
+        <p><a href="{{ url_for('admin') }}" class="link-nav">Tela do Administrador</a></p>
+        <a href="{{ url_for('logout') }}" class="link-nav" id="botao-logout">Logout</a>
+
+        {% elif views == "adm" %}
+        <p><a href="{{ url_for('homepage') }}" class="link-nav">Ver homepage dos Produtos</a></p>
+        <a href="{{ url_for('logout') }}" class="link-nav">Logout</a>
+          
+        <!-- Nav do Usuario-->
+        {% elif views == "homepage" %}
+        <a class="carrinho-compras" href="{{ url_for('carrinho' )}}">
+          <i class="bi bi-cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+          </i>
+          <span id="carrinho-numero">{{ add_carrinho|length }}</span>
+        </a>
+        <p><a href="#" class="link-nav">Olá, {{ current_user.fullname }}</a></p>
+        <a href="{{ url_for('logout') }}" class="link-nav" id="botao-logout">Logout</a>
+        
+        {% endif %}
+        <!-- Se não estiver logado a nav sera diferente -->
+        {% else %}
+        {% if views != "login" and views != "criarconta" %}
+        <a class="carrinho-compras" href="{{ url_for('carrinho') }}">
+          <i class="bi bi-cart">
+            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-cart" viewBox="0 0 16 16">
+              <path d="M0 1.5A.5.5 0 0 1 .5 1H2a.5.5 0 0 1 .485.379L2.89 3H14.5a.5.5 0 0 1 .491.592l-1.5 8A.5.5 0 0 1 13 12H4a.5.5 0 0 1-.491-.408L2.01 3.607 1.61 2H.5a.5.5 0 0 1-.5-.5zM3.102 4l1.313 7h8.17l1.313-7H3.102zM5 12a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm7 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4zm-7 1a1 1 0 1 1 0 2 1 1 0 0 1 0-2zm7 0a1 1 0 1 1 0 2 1 1 0 0 1 0-2z"/>
+            </svg>
+          </i>
+          <span id="carrinho-numero">{{ add_carrinho|length }}</span>
+        </a>
+        
+        <p><a href="{{ url_for('login', user='usuario') }}" class="link-nav btn btn-outline-primary" id="btn-entrar">Entrar</a></p>
+        <a href="{{ url_for('login', user='administrador') }}" class="link-nav">Sou Administrador</a>
+        {% endif %}
+    </div>
+        {% endif %}
+      
+
+  </nav>
+
+ 
+

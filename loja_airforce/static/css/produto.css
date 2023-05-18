@@ -1,0 +1,299 @@
+.container-product{
+    background-color: #fff;
+    margin: 10px;
+    border-radius: 5px;
+    background-color: #FFF;
+    display: flex;
+    width: 80%;
+    height: 500px;
+    margin-left: 10%;
+    margin-top: 20px;
+    box-shadow: 0 5px 10px #00000041;
+}
+
+  
+.info-product {
+    flex: 1;
+    margin: 0.5em;
+    font-size: 20px;
+    padding: 1em;
+    border-radius: 5px;
+    
+}
+
+.info-product img {
+    padding: 20px 10px 20px 10px;
+    display: inline;
+    
+}
+
+.info-product h3{
+    display: inline-flex;
+    color: #000;
+    font-size: 25px;
+    max-height: 60px;
+    overflow: hidden;
+    width: 100%;
+    min-height: 2.5em;
+}
+
+.bold {
+    font-size: 30px;
+}
+
+
+body {
+    
+    background-color: #f1efef;
+    
+}
+
+
+.container-product .bold {
+    font-weight: bold;
+    margin-bottom: 0;
+
+}
+
+
+.frete-container {
+    display: flex;
+    align-items: center;
+    margin: 0;
+    height: 60px;
+  }
+  
+.info-product .icon-frete {
+    width: 70px;
+    margin-right: 10px;
+  }
+  
+.info-product .text-frete {
+    margin: 0;
+    color: #468eb7;
+    font-size: 12px;
+ }
+.descricao-product {
+    width: 90%;
+    margin-left: 50px;
+    height: 800px;
+}
+
+.descricao-product h1{
+    color: #000; 
+    margin: 20px;
+    margin-bottom: 40px; 
+    display: block;
+}
+
+.descricao-product p {
+    width: 70%; 
+    font-size: 20px; 
+    padding-left: 30px;
+    margin-bottom: 30px;
+}
+
+.d-block {
+    width: 500px !important;
+}
+
+#carouselExampleControls{
+    width: 60%;
+    margin: 0 5%;
+    max-width: 50% !important;
+    float: 0;
+}
+
+.carousel-control-prev-icon{
+    background-color: #0dc3e3;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+}
+
+.carousel-control-prev-icon:hover{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.carousel-control-next-icon{
+    background-color: #0dc3e3;
+    width: 1.5em;
+    height: 1.5em;
+    border-radius: 50%;
+}
+
+.carousel-control-next-icon:hover{
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.adicionar-ao-carrinho {
+    background-color: #007bff !important;
+    margin-top: 10px;
+    border: none;
+}
+
+@media screen and (min-width: 1300px) {
+    body {
+        min-width: 1300px;
+        
+    }
+
+    .container-product {
+        width: 1200px;
+        height: 720px;
+        margin: auto;
+        margin-top: 2rem;
+        
+    }
+    #carouselExampleControls{
+       
+        padding: 2rem 0;
+    }
+    
+    #carouselExampleControls .carousel-inner img{
+        width: 100% !important;
+
+    }
+
+    .btn {
+        font-size: 1.6rem ;
+        width: 400px !important;
+    }
+
+    .container-product .info-product .img-pay{
+        width: 250px !important;
+    }
+
+    .container-product .info-product img{
+        width: 120px;
+        
+    }
+
+    .frete-container {
+        padding-top: 3rem;
+    }
+
+    .container-product .info-product a{
+        font-size: 1.8rem;
+    }
+
+    .container-product .info-product #p-pay{
+        font-size: 1.8rem !important;
+    }
+
+    .container-product .info-product p{
+        font-size: 1.4rem;
+    }
+
+    .container-product .info-product h3 {
+        font-size: 2.6rem;
+        min-height: 100px;
+    }
+
+    .container-product .info-product .bold {
+        font-size: 2.5rem;
+       
+    }
+
+    .container-product .info-product {
+        padding: 1.5rem !important;
+    }
+
+    .descricao-product h1{
+        
+        font-size: 3.3rem;
+    }
+
+    .descricao-product p{
+        
+        font-size: 1.7rem;
+       
+    }
+
+    @media screen and (max-width:1200px) {
+        * {
+            font-size: 14px;
+        }
+
+
+        #carouselExampleControls .carousel-inner img{
+            width: 100px !important;
+    
+        }
+
+        body {
+            min-width: 400px;
+            
+        }
+    
+        .container-product {
+            width: 400px;
+            height: 550px;
+            margin: auto;
+            margin-top: 1rem;
+            
+        }
+        #carouselExampleControls{
+           
+            padding: 1rem 0;
+        }
+        
+    
+        .btn {
+            font-size: 1rem ;
+            width: 200px !important;
+        }
+    
+        .container-product .info-product .img-pay{
+            width: 250px !important;
+        }
+    
+        .container-product .container .info-product img{
+            width: 120px;
+            
+        }
+    
+        .frete-container {
+            padding-top: 3rem;
+        }
+    
+        .container-product .info-product a{
+            font-size: 1.8rem;
+        }
+    
+        .container-product .info-product #p-pay{
+            font-size: 1.8rem !important;
+        }
+    
+        .container-product .info-product p{
+            font-size: 1.4rem;
+        }
+    
+        .container-product .info-product h3 {
+            font-size: 2.6rem;
+            min-height: 100px;
+        }
+    
+        .container-product .info-product .bold {
+            font-size: 2.5rem;
+           
+        }
+    
+        .container-product .info-product {
+            padding: 1.5rem !important;
+        }
+    
+        .descricao-product h1{
+            
+            font-size: 3.3rem;
+        }
+    
+        .descricao-product p{
+            
+            font-size: 1.7rem;
+           
+        }
+
+        
+    }
+}

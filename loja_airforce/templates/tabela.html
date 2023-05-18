@@ -1,0 +1,34 @@
+{% extends "homepage.html" %}
+
+{% block title%}
+Adm - Airforce Shop
+{% endblock %}
+
+{% block import %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/admin.css')}}">
+{% endblock %}
+
+{% block body%}
+<body>
+
+    <div class="table-container">  
+        
+        <table class="table">
+          <tr>
+            <th>ID</th>
+            <th>Nome do Produto</th>
+            <th>Valor</th>
+            <th>Qtd_estoque</th>
+          </tr>
+          {% for produto in produtos %}
+            <tr>
+              <td>{{ produto.id }}</td>
+              <td>{{ produto.nome_produto }}</td>
+              <td>{{ produto.valor }}</td>
+              <td style="padding-left: 50px !important;">{{ produto.qtd_estoque }}</td>
+            </tr>
+          {% endfor %}
+        </table>
+    </div>
+</body>
+{% endblock %}

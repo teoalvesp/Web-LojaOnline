@@ -1,0 +1,78 @@
+* {
+    text-decoration: none;
+    font-family: Arial, Helvetica, sans-serif;
+    padding: 0;
+    margin: 0;
+
+}
+
+/* aviso no inicio da homepage */
+body .alert {
+    width: 95%;
+    margin-left: 2.5%;
+    margin-right: 2.5%;
+    margin-top: 10px;
+    color: #ffffffa8;
+    color: #000;
+    background-color: #e4e1e1;
+    border-color: #dcdbdbd8;
+    
+}
+
+/* Rodapé */
+footer {
+    background-color: #000000;
+    text-align: center;
+    height: 250px;
+    font-size: 15px;
+    padding: 80px;
+    color: #fff;
+}
+
+.btn {
+    background-color: #000 !important;
+}
+
+.btn:hover {
+    box-shadow: 0 5px 10px rgba(7, 40, 226, 0.2) !important;
+}
+
+#success-message {
+    display: none;
+    background-color: green;
+    color: white;
+    font-size: 18px;
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.container-main {
+    min-height: 800px;
+}
+
+@media screen and (min-width: 1300px) {
+    body {
+      font-size: 20px;
+    }
+    
+    .container-main {
+      width: 80%;
+      margin: 0 auto;
+    }
+
+    body .alert {
+        width: 95%;
+        margin-left: 2.5%;
+        margin-right: 2.5%;
+        margin-top: 10px;
+        color: #ffffffa8;
+        color: #000;
+        background-color: #e4e1e1;
+        border-color: #dcdbdbd8;
+        font-size: 20px;
+        
+    }
+
+
+  }
+  

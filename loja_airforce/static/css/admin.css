@@ -1,0 +1,172 @@
+.botao-arquivo {
+    padding: 5px 10px;
+    border-radius: 10px;
+    border: 0;
+    background-color: #333;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+    width: 50%;
+    padding: 10px 10px 0, 0;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+}
+  
+  
+.input-arquivo {
+    display: none;
+}
+  
+#imagem-arquivo {
+    display: none;
+}
+  
+#imagem-arquivo.visivel {
+    display: inline-block;
+}
+
+.form-container {
+    width: 300px;
+    margin-left: 5%;
+    margin-top: 1.7em;
+}
+
+
+.form-container input {
+    height: 2em;
+}
+
+.form-outline {
+    height: 60px;
+}
+
+.form-remove {
+    margin-top: 50px !important;
+}
+
+iframe {
+    margin-top: 1em;
+    margin-left: 1em;
+}
+
+.btn {
+    padding: 5px;
+}
+
+.table td, tr {
+    font-size: 1.2em;
+}
+
+/* Estilos para telas menores que 1000 pixels */
+@media only screen and (max-width: 999px) {
+    /* Regras de estilo CSS para telas menores que 1000 pixels */
+    body {
+      font-size: 14px;
+    }
+
+    .form-container {
+        width: 300px;
+        margin-left: 1.5%;
+        margin-top: 1.7em;
+    }
+
+
+}
+
+/* Estilos para telas menores que 830 pixels */
+@media only screen and (max-width: 829px) {
+    /* Regras de estilo CSS para telas menores que 1000 pixels */
+    body {
+      font-size: 14px;
+    }
+
+    h2 {
+        font-size: 20px;
+    }
+
+    .form-container {
+        width: 90%;
+        margin-left: 1.5%;
+        margin-top: 1.7em;
+    
+    }
+
+    #products {
+        display: block !important;
+    }
+
+    #products iframe {
+        width: 90%;
+        height: 300px;
+        margin-left: 2em;
+    }
+
+    .table{
+        font-size: 13px;
+    }
+
+
+    #products .form-container {
+        display: flex;
+      
+    }
+
+    .popup{
+        margin-right: 50px;
+        margin-left: 25px;
+    }
+
+    #products .form-outline{
+        margin-bottom: 1em !important;
+    }
+
+    .botao-arquivo {
+        font-size: 10px;
+    }
+
+
+}
+
+/* Estilos para telas acima de 1400 pixels */
+@media only screen and (min-width: 1400px) {
+   
+    body {
+        font-size: 1.7em;
+        }
+    
+    h2 {
+        font-size: 1.7em;
+    }
+
+    #products iframe {
+        width: 60%;
+        height: 900px;
+        margin-left: 2em;
+    }
+
+    #products .form-container {
+        width: 30%;
+        margin-left: 2.5%;
+    }
+
+    .botao-arquivo {
+        margin: 2em 0;
+        font-size: 1em;
+    }
+
+    .btn {
+        font-size: 1em;
+    }
+
+    #products .form-outline{
+        margin-bottom: 2.5em !important;
+    }
+
+    #products .form-control{
+        height: 3em;
+    }
+   
+
+  }
+  

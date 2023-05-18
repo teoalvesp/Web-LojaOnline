@@ -1,0 +1,76 @@
+{% extends "homepage.html" %}
+
+{% block title%}
+Adm - Airforce Shop
+{% endblock %}
+
+{% block import %}
+<link rel="stylesheet" href="{{url_for('static', filename='css/admin.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/navbar.css')}}">
+<link rel="stylesheet" href="{{url_for('static', filename='css/forms.css')}}">
+{% endblock %}
+
+{% block body%}
+<body>
+    {% include "navbar.html" %}
+    <main id="products" style="display: flex;">
+	    <iframe src="{{ url_for('tabela') }}" width="60%" height="600"></iframe>
+            
+        <div class="form-container">
+            <form method="POST" class="popup bloco-add-img" enctype="multipart/form-data">
+        
+            {{ form_add.csrf_token }}
+            <h2>Adicionar Produto</h2>
+        
+            <div class="form-outline mb-4">
+                {{ form_add.nome_produto.label(class="form-label") }}
+                {{ form_add.nome_produto(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-outline mb-4">
+                {{ form_add.valor.label(class="form-label") }}
+                {{ form_add.valor(class="form-control form-control-lg") }}
+            </div>
+            <div class="form-outline mb-4">
+                {{ form_add.qtd_estoque.label(class="form-label") }}
+                {{ form_add.qtd_estoque(class="form-control form-control-lg") }}
+            </div>
+            
+            <div class="bloco-arquivo">
+                <label for="foto" class="botao-arquivo" style="display: flex;">
+                Escolher arquivo
+                {{ form_add.foto(class="input-arquivo", id="foto") }}
+                </label> 
+                <span id="imagem-arquivo" class=""></span>      
+            </div>
+            
+            <div class="div-botao">
+                {{ form_add.btn_submit(class="btn btn-primary btn-lg btn-block") }}
+                
+            </div>
+            <hr>
+            </form>
+            <form method="POST" id="form-remove" class="popup bloco-add-img" style="margin-top: 1.5em;">
+            {{ form_del.csrf_token }}
+            <h2> Remover Produto</h2>
+            <div class="form-outline mb-4">
+                {{ form_del.id_produto.label(class="form-label") }}
+                {{ form_del.id_produto(class="form-control form-control-lg") }}
+            </div>
+            <div class="div-botao">
+                {{ form_del.btn_submit(class="btn btn-primary btn-lg btn-block") }}
+            </div>
+        
+            </form>
+        </div>
+           
+    </main>
+
+    <script>
+        setTimeout(function() {
+            document.getElementById('success-message').style.display = 'none';
+        }, 5000); // 5000 ms = 5 segundos
+    </script>
+    <script src="../static/js/foto.js"></script>
+
+</body>
+{% endblock %}
