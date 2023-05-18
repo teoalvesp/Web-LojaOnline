@@ -8,7 +8,7 @@ import locale
 
 app = Flask(__name__)
 app.config["SQLALCHEMY_DATABASE_URI"] = 'sqlite:///airforceshop.db'# cria uma pasta com nosso banco de dados
-app.config["SECRET_KEY"] = "ec0e095fb807be5bee43398399aefcbc"
+app.config["SECRET_KEY"] = "sua secret_key"
 app.config["UPLOAD_FOLDER"] = "static/img"
 app.config['PER_PAGE'] = 12  # Defina o número de produtos por página
 
