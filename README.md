@@ -1,10 +1,10 @@
-### Loja Online de Tênis Nike Air Force
+## Loja Online de Tênis Nike Air Force
 
 Este é um projeto de uma loja online de tênis Nike Air Force, desenvolvida em Flask, com a utilização de Bootstrap para estilização. O projeto inclui funcionalidades como login de usuário com autenticação e senha criptografada, criação de conta, armazenamento de produtos, imagens de produtos, usuários e endereços dos usuários em um banco de dados, carrinho de compras no backend, área de administração para adicionar ou remover produtos e paginação para produtos.
 
-# OBSERVAÇÃO: Todo o processo do frontend foi feito em processo de aprendizagem do mesmo, existe funcionalidades feitas no backend que poderia trazer melhor acessibilidade se feita com JavaScript no front, em breve chegará novas versões com melhorias.
+### OBSERVAÇÃO: Todo o processo do frontend foi feito em processo de aprendizagem do mesmo, existe funcionalidades feitas no backend que poderia trazer melhor acessibilidade se feita com JavaScript no front, em breve chegará novas versões com melhorias.
 
-### Tecnologias utilizadas
+## Tecnologias utilizadas
 
 -Flask
 -Python
@@ -14,7 +14,7 @@ Este é um projeto de uma loja online de tênis Nike Air Force, desenvolvida em 
 -CSS
 -JavaScript
 
-### Para executar o projeto, você precisará das seguintes ferramentas instaladas em sua máquina:
+## Para executar o projeto, você precisará das seguintes ferramentas instaladas em sua máquina:
 
 1 - Clone o repositório em sua máquina local
 2 - Instale as dependências necessárias:
@@ -36,7 +36,7 @@ execute o arquivo "main.py"
 6 - Acesse http://localhost:5000 em seu navegador para visualizar o site
 
 
-### Funcionalidades
+## Funcionalidades
 
 -Login de usuário com autenticação e senha criptografada
 -Criação de conta de usuário
@@ -45,7 +45,7 @@ execute o arquivo "main.py"
 -Área de administração para adicionar ou remover produtos
 -Paginação para produtos
 
-### Contribuição
+## Contribuição
 Se você quiser contribuir para o projeto, siga os seguintes passos:
 
 -Faça um fork deste repositório
@@ -54,6 +54,6 @@ Se você quiser contribuir para o projeto, siga os seguintes passos:
 -Faça o push para a branch criada: git push origin feature/nome-da-alteracao
 -Abra um pull request
 
-### Licença
+## Licença
 
 Este projeto está licenciado sob a Licença MIT - veja o arquivo LICENSE para detalhes.
