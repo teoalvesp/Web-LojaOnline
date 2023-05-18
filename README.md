@@ -2,7 +2,7 @@
 
 Este é um projeto de uma loja online de tênis Nike Air Force, desenvolvida em Flask, com a utilização de Bootstrap para estilização. O projeto inclui funcionalidades como login de usuário com autenticação e senha criptografada, criação de conta, armazenamento de produtos, imagens de produtos, usuários e endereços dos usuários em um banco de dados, carrinho de compras no backend, área de administração para adicionar ou remover produtos e paginação para produtos.
 
-### OBSERVAÇÃO: Todo o processo do frontend foi feito em processo de aprendizagem do mesmo, existe funcionalidades feitas no backend que poderia trazer melhor acessibilidade se feita com JavaScript no front, em breve chegará novas versões com melhorias.
+#### OBSERVAÇÃO: Todo o processo do frontend foi feito em processo de aprendizagem do mesmo, existe funcionalidades feitas no backend que poderia trazer melhor acessibilidade se feita com JavaScript no front, em breve chegará novas versões com melhorias.
 
 ## Tecnologias utilizadas
 
